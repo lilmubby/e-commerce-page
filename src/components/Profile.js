@@ -13,7 +13,6 @@ function Profile(props) {
     <div className="profile flex">
       <img src={cart} alt="cart" className="cart" onClick={cartDisplay} />
       {props.count >= 1 && <div className="cart-count">{props.count}</div>}
-      {/* <div className="cart-count">{}</div> */}
       <img src={avatar} alt="avatar" className="avatar" />
       {clicked && <Cart count={props.count} />}
     </div>
