@@ -2,10 +2,11 @@ import item from "../assets/images/image-product-1.jpg";
 import deleted from "../assets/images/icon-delete.svg";
 
 function Cart(props) {
+
   return (
     <div className="cart-box">
       <h3 className="cart-box-header">Cart</h3>
-      {props.count <= 0 ? (
+      { (!props.addToCart && props.count) ||  props.count ===0? (
         <div className="empty-cart-container">
           <p className="empty-cart">Your cart is empty</p>
         </div>

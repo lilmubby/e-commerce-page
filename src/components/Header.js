@@ -6,21 +6,12 @@ import menu from "../assets/images/icon-menu.svg";
 // import { useState } from "react";
 
 function Header(props) {
-  // const [click, setClick] = useState(false);
-
-  // function clicked() {
-  //   setClick(true);
-  // }
-
-  // function closeNav() {
-  //   setClick(false);
-  // }
+  
   return (
     <header className="flex">
       <div className="logo-container flex">
         <button className="menu-btn">
           <img src={menu} alt="Menu" className="menu" onClick={props.clicked} />
-          {/* <img src={close} alt="Close" className="close" /> */}
           <span>Menu</span>
         </button>
         <Logo />
@@ -29,7 +20,7 @@ function Header(props) {
           handleClick={props.closeNav}
         />
       </div>
-      <Profile count={props.count} />
+      <Profile count={props.count} addToCart={props.addToCart} />
     </header>
   );
 }

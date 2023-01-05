@@ -4,17 +4,7 @@ import Image from "./Image";
 // import Cart from "./Cart";
 
 function Main(props) {
-  // const [count, setCount] = useState(0);
-
-  // function minusClick() {
-  //   count <= 0 ? setCount(0) : setCount(count - 1);
-  // }
-  // function plusClick() {
-  //   setCount(count + 1);
-  // }
-  function handleCart() {
-    console.log(props.count);
-  }
+  // 
   return (
     <main>
       <Image />
@@ -22,7 +12,7 @@ function Main(props) {
         minusClick={props.minusClick}
         count={props.count}
         plusClick={props.plusClick}
-        addCart={handleCart}
+        handleCart={props.handleCart}
       />
     </main>
   );

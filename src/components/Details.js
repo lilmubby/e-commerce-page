@@ -34,7 +34,7 @@ function Details(props) {
             onClick={props.plusClick}
           />
         </div>
-        <button className="add-to-cart flex" onClick={props.addCart}>
+        <button className="add-to-cart flex" onClick={props.handleCart}>
           <img src={cart} alt="cart-button" />
           <p>Add to cart</p>
         </button>

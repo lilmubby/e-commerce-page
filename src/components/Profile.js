@@ -3,18 +3,23 @@ import avatar from "../assets/images/image-avatar.png";
 import Cart from "./Cart";
 import { useState } from "react";
 function Profile(props) {
-  const [clicked, setClicked] = useState(false);
+  const [togglecartDisplay, setTogglecartDisplay] = useState(false);
   function cartDisplay() {
-    setClicked((prev) => {
+    setTogglecartDisplay((prev) => {
       return !prev;
     });
   }
   return (
     <div className="profile flex">
       <img src={cart} alt="cart" className="cart" onClick={cartDisplay} />
-      {props.count >= 1 && <div className="cart-count">{props.count}</div>}
+      {props.count > 0 && props.addToCart ?
+      (<div className="cart-count">{props.count}</div>):
+      props.count === 0 && props.addToCart ?
+      null:
+      null
+      }
       <img src={avatar} alt="avatar" className="avatar" />
-      {clicked && <Cart count={props.count} />}
+      {togglecartDisplay && <Cart count={props.count} addToCart={props.addToCart} />}
     </div>
   );
 }
